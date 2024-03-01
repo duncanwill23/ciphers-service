@@ -1,6 +1,7 @@
 FROM python:3.11.6-alpine
 WORKDIR /home/application
 
+
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONNUMBUFFERED=1
 RUN pip install --upgrade pip
