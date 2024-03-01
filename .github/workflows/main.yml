@@ -29,6 +29,6 @@ jobs:
         python3 manage.py test
     - name: Build and push the image
       run: |
-        echo "${{ secrets.ACCESS_TOKEN }}" | docker login ghcr.io -u duncanwill23 --password-stdin
-        docker build -t ghr.io/duncanwill23/ciphers_service:latest --file Dockerfile .
-        docker push ghcr.io/duncanwill23/ciphers_service:latest
+        docker login --username duncanwill23 --password ${{secrets.ACCESS_TOKEN}} ghcr.io
+        docker build -t ghcr.io/duncanwill23/ciphers-service:latest --file Dockerfile .  
+        docker push ghcr.io/duncanwill23/ciphers-service:latest 
